@@ -33,7 +33,11 @@ define(['model/_estudianteModel'], function() {
  	validate: function(attrs,options){
             var validationMessage = "";
             if(!attrs.name){
-                validationMessage = "The name can't be empty.";
+                validationMessage = "El nombre no puede ser vacío. ";
+            }
+            var promedio = attrs.puntosCalidad/ attrs.creditos;
+            if(promedio < 3.25){
+                validationMessage += "El promedio no puede ser inferior a 3.25. "
             }
             if(validationMessage.length>0){
                return validationMessage;
