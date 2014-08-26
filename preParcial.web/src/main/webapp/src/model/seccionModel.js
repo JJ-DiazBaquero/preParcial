@@ -37,13 +37,19 @@ define(['model/_seccionModel'], function() {
             }
             if(attrs.profesor_seccionId === "")
             {
-                validationMessage += "La sección debe tener un profesor asignado. " 
+                validationMessage += "La sección debe tener un profesor asignado. "; 
+            }
+            else
+            {
+                var value = App.Utils.getModelFromCache('profesorComponent',this.get('profesor_seccionId'));
+                var anios = value.get('aniosExperiencia');
+                if(anios < 5) 
+                {
+                    validationMessage += "La sección debe tener un profesor con mas anios de experiencia. "; 
+                }
+                    
             }
             
-            if((attrs.profesor_seccionId !== "")  &&  (attrs.profesor_seccionId.aniosExperiencia < 5))
-            {
-                validationMessage += "La sección debe tener un profesor con mas anios de experiencia "
-            }
             
             if(validationMessage.length>0){
                return validationMessage;
