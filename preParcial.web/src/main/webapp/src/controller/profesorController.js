@@ -99,7 +99,7 @@ define(['controller/_profesorController','delegate/profesorDelegate'], function(
                             var fechaActual = new Date();
                             
                             var x = "" +  ( fechaActual - d.attributes.fechaVinculacion);
-                            var aniosVinc = (x.getHours() / 24) / 365 
+                            var aniosVinc = x.getYear(); 
                             /*Ahora se instancia un ListaSeccionesModel, con un nuevo objeto JSON como parámetro como constructor (antes sportModel), extrayendo los datos de “d”.*/
                             var model = new App.Model.ListaSeccionesModel({name: d.attributes.name, anios: aniosVinc});
                             //y se agrega finalmente a los modelos prom de la lista.
