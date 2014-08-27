@@ -32,7 +32,15 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'profesor',
         model: App.Model.ProfesorModel,
         listModel: App.Model.ProfesorList,
-        controller : App.Controller.ProfesorController
+        controller : App.Controller.ProfesorController,
+        
+        postInit: function(){
+            var self = this;
+            Backbone.on(self.componentId + '-profesor-clasificacion', function(params) {
+                self.componentController.clasificacion(params);
+            });
+        }
+        
     });
     return App.Component.ProfesorComponent;
 });
