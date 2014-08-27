@@ -4,13 +4,13 @@
     <table class="table striped">
     <thead>
     <tr>
-		 <th>Name</th>
+		 <th>Nombre</th>
 		 <th>Cupo Maximo</th>
-		 <th>Salon</th>
+		 <th>Salo&#769n</th>
 		 <th>Inscritos</th>
-		 <th>Profesor_seccion Id</th>
-		 <th>Enespera_seccion Id</th>
-		 <th>Inscritos_seccion Id</th>
+		 <th>Profesor de la seccio&#769n Id</th>
+		 <th>En espera seccio&#769n Id</th>
+		 <th>Inscritos en la seccio&#769n Id</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -26,10 +26,10 @@
 		<td><%= htmlEncode(seccion.getDisplay('inscritos_seccionId')) %></td>
     <td>
     <% if(showEdit) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-seccion-edit',{id:<%= seccion.id %>}); return false" >Edit</a> |
+    <a onclick="Backbone.trigger('<%= componentId %>-seccion-edit',{id:<%= seccion.id %>}); return false" >Editar</a> |
 	<% } %> 
 	<% if(showDelete) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-seccion-delete',{id:<%= seccion.id %>}); return false" >Delete</a> 
+    <a onclick="Backbone.trigger('<%= componentId %>-seccion-delete',{id:<%= seccion.id %>}); return false" >Eliminar</a> 
 	<% } %>    
 	</td>
     </tr>
