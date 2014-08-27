@@ -32,7 +32,13 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'curso',
         model: App.Model.CursoModel,
         listModel: App.Model.CursoList,
-        controller : App.Controller.CursoController
+        controller : App.Controller.CursoController,
+        
+        postInit: function(){
+            var self = this;
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+        }
     });
     return App.Component.CursoComponent;
 });

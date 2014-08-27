@@ -36,6 +36,8 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         
         postInit: function(){
             var self = this;
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
             Backbone.on(self.componentId + '-profesor-clasificacion', function(params) {
                 self.componentController.clasificacion(params);
             });

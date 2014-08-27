@@ -32,7 +32,13 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'estudiante',
         model: App.Model.EstudianteModel,
         listModel: App.Model.EstudianteList,
-        controller : App.Controller.EstudianteController
+        controller : App.Controller.EstudianteController,
+        
+        postInit: function(){
+            var self = this;
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+        }
     });
     return App.Component.EstudianteComponent;
 });

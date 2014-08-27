@@ -32,7 +32,13 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'seccion',
         model: App.Model.SeccionModel,
         listModel: App.Model.SeccionList,
-        controller : App.Controller.SeccionController
+        controller : App.Controller.SeccionController,
+        
+         postInit: function(){
+            var self = this;
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+        }
     });
     return App.Component.SeccionComponent;
 });
